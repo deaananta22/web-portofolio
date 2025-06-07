@@ -175,127 +175,31 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
-#hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* Hero Section Layout */
+.hero {
+    display: flex;
     align-items: center;
-    gap: 4rem;
-    padding: 8rem 0 4rem;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
     position: relative;
 }
 
 .hero-left {
-    animation: fadeInUp 1s ease-out;
-}
-
-.pre-title {
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    position: relative;
-    padding-left: 2rem;
-}
-
-.pre-title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 1.5rem;
-    height: 3px;
-    background: var(--gold-gradient);
-    transform: translateY(-50%);
-    border-radius: 2px;
-}
-
-.hero-name {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    margin: 1rem 0;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-name span {
-    background: var(--secondary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    flex: 1;
+    z-index: 2;
 }
 
 .hero-right {
-    display: flex;
-    justify-content: center;
-    animation: fadeInRight 1s ease-out 0.3s both;
-}
-
-/* Profile Image Styling */
-.profile-image-container {
-    position: relative;
-    width: 450px;
-    height: 450px;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.profile-image {
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 8px solid transparent;
-    background: var(--gold-gradient);
-    padding: 8px;
-    box-shadow: 
-        0 0 0 4px rgb(225, 220, 220),
-        0 15px 35px rgba(99, 124, 236, 0.685),
-        0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: var(--transition-smooth);
-    animation: float 6s ease-in-out infinite;
     position: relative;
     z-index: 2;
 }
 
-.profile-image:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 
-        0 0 0 4px rgba(255, 255, 255, 0.4),
-        0 20px 45px rgba(102, 126, 234, 0.3),
-        0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Decorative Elements */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 40px;
-  position: relative;
-}
-
-.hero-left {
-  flex: 1;
-  z-index: 2;
-}
-
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
+/* Profile Image Container - SINGLE VERSION */
 .profile-image-container {
     position: relative;
     width: 300px;
@@ -305,7 +209,7 @@ nav ul li a:hover {
     align-items: center;
 }
 
-/* Profile Image - FIXED */
+/* Profile Image - SINGLE VERSION */
 .profile-image {
     width: 250px;
     height: 250px;
@@ -332,8 +236,7 @@ nav ul li a:hover {
         0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Decorative Background Circles - PERFECTLY ALIGNED */
-/* Decorative Background Circles - FIXED ALIGNMENT */
+/* Decorative Background Circles - ADJUSTED POSITION */
 .profile-image-container::before,
 .profile-image-container::after {
     content: '';
@@ -341,11 +244,12 @@ nav ul li a:hover {
     border-radius: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    /* GESER KE KIRI DAN ATAS */
+    transform: translate(-70%, -40%);
 }
 
 .profile-image-container::before {
-    width: 266px;  /* 250px + 16px (padding dan border dari profile-image) */
+    width: 266px;
     height: 266px;
     background: var(--accent-gradient);
     opacity: 0.3;
@@ -354,15 +258,15 @@ nav ul li a:hover {
 }
 
 .profile-image-container::after {
-    width: 280px;  /* Sedikit lebih besar dari ::before */
+    width: 280px;
     height: 280px;
     background: var(--purple-gradient);
     opacity: 0.2;
     z-index: 0;
     animation: pulse 6s ease-in-out infinite alternate-reverse;
 }
-    
-/* Floating Decorative Elements - BETTER POSITIONED */
+
+/* Floating Decorative Elements */
 .hero-right::before {
     content: '✨';
     position: absolute;
@@ -382,12 +286,6 @@ nav ul li a:hover {
     animation: floatSlow 10s ease-in-out infinite reverse;
     z-index: 4;
 }
-
-      .background-circle {
-    margin-top: -25px;  
-    margin-left: -40px; 
-}
-
 /* Animasi tambahan */
 @keyframes pulse {
   from {
