@@ -235,34 +235,6 @@ nav ul li a:hover {
         0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Decorative Background Circles - ADJUSTED POSITION */
-.profile-image-container::before,
-.profile-image-container::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-  transform: translate(-70%, -40%);
-}
-
-.profile-image-container::before {
-    width: 266px;
-    height: 266px;
-    background: var(--accent-gradient);
-    opacity: 0.3;
-    z-index: 1;
-    animation: pulse 4s ease-in-out infinite alternate;
-}
-
-.profile-image-container::after {
-    width: 280px;
-    height: 280px;
-    background: var(--purple-gradient);
-    opacity: 0.2;
-    z-index: 0;
-    animation: pulse 6s ease-in-out infinite alternate-reverse;
-}
 
 /* Floating Decorative Elements */
 .hero-right::before {
