@@ -320,31 +320,39 @@ nav ul li a:hover {
 
 
 /* Lingkaran animasi di belakang profil */
-.profile-image-container::before {
+.profile-image-container {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+
+.profile-image-container::before,
+.profile-image-container::after {
   content: '';
   position: absolute;
-  width: 450px;
-  height: 450px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profile-image-container::before {
   background: var(--accent-gradient);
   opacity: 0.3;
   z-index: 1;
   animation: pulse 4s ease-in-out infinite alternate;
-  top: -80px;
+  top: -40px;
 }
 
 .profile-image-container::after {
-  content: '';
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
   background: var(--purple-gradient);
   opacity: 0.2;
   z-index: 0;
   animation: pulse 6s ease-in-out infinite alternate-reverse;
-  top: -60px;
+  top: -20px;
 }
+
 
 /* Floating Decorative Elements */
 .hero-right::before {
