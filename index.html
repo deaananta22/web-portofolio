@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Portofolio Dea Ananta - Tugas Grafika Komputer</title>
     <style>
-      :root {
+     :root {
     /* Soft Color Palette */
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --secondary-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
@@ -177,12 +177,18 @@ nav ul li a:hover {
 /* Hero Section */
 #hero {
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 0 4rem;
+    position: relative;
+}
+
+.hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
-    padding: 8rem 0 4rem;
-    position: relative;
+    width: 100%;
 }
 
 .hero-left {
@@ -233,35 +239,38 @@ nav ul li a:hover {
 .hero-right {
     display: flex;
     justify-content: center;
+    align-items: center;
     animation: fadeInRight 1s ease-out 0.3s both;
+    position: relative;
 }
 
-/* Profile Image Styling */
+/* Profile Image Container - FIXED */
 .profile-image-container {
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Profile Image - FIXED */
 .profile-image {
-    width: 450px;
-    height: 450px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
     border: 8px solid transparent;
     background: var(--gold-gradient);
     padding: 8px;
     box-shadow: 
-        0 0 0 4px rgb(225, 220, 220),
-        0 15px 35px rgba(99, 124, 236, 0.685),
+        0 0 0 4px rgba(225, 220, 220, 0.5),
+        0 15px 35px rgba(99, 124, 236, 0.3),
         0 5px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition-smooth);
     animation: float 6s ease-in-out infinite;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 .profile-image:hover {
@@ -271,130 +280,56 @@ nav ul li a:hover {
         0 20px 45px rgba(102, 126, 234, 0.3),
         0 8px 25px rgba(0, 0, 0, 0.15);
 }
-.profile-pic {
-  width: 450px;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
 
-
-/* Decorative Elements */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 40px;
-  position: relative;
-}
-
-.hero-left {
-  flex: 1;
-  z-index: 2;
-}
-
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.profile-image-container {
-  position: relative;
-  width: 550px;
-  height: 550px;
-}
-
-.profile-image {
-  width: 550%;
-  height: 550%;
-  border-radius: 50%;
-  object-fit: cover;
-  position: relative;
-  z-index: 2;
-}
-
-
-/* Lingkaran animasi di belakang profil */
-.profile-image-container {
-  position: relative;
-  display: inline-block;
-  z-index: 2;
-}
-
+/* Decorative Background Circles - PERFECTLY ALIGNED */
 .profile-image-container::before,
 .profile-image-container::after {
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .profile-image-container::before {
-  background: var(--accent-gradient);
-  opacity: 0.3;
-  z-index: 1;
-  animation: pulse 4s ease-in-out infinite alternate;
-  top: -40px;
+    width: 320px;
+    height: 320px;
+    background: var(--accent-gradient);
+    opacity: 0.3;
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite alternate;
 }
 
 .profile-image-container::after {
-  background: var(--purple-gradient);
-  opacity: 0.2;
-  z-index: 0;
-  animation: pulse 6s ease-in-out infinite alternate-reverse;
-  top: -20px;
+    width: 350px;
+    height: 350px;
+    background: var(--purple-gradient);
+    opacity: 0.2;
+    z-index: 0;
+    animation: pulse 6s ease-in-out infinite alternate-reverse;
 }
 
-
-/* Floating Decorative Elements */
+/* Floating Decorative Elements - BETTER POSITIONED */
 .hero-right::before {
-  content: '✨';
-  position: absolute;
-  top: 20%;
-  right: 10%;
-  font-size: 2rem;
-  animation: floatSlow 8s ease-in-out infinite;
-  z-index: 3;
+    content: '✨';
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    font-size: 2rem;
+    animation: floatSlow 8s ease-in-out infinite;
+    z-index: 4;
 }
 
 .hero-right::after {
-  content: '🌟';
-  position: absolute;
-  bottom: 20%;
-  left: 10%;
-  font-size: 1.5rem;
-  animation: floatSlow 10s ease-in-out infinite reverse;
-  z-index: 3;
+    content: '🌟';
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    font-size: 1.5rem;
+    animation: floatSlow 10s ease-in-out infinite reverse;
+    z-index: 4;
 }
-
-/* Animasi tambahan */
-@keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-
 
 /* Card Box */
 .card-box {
@@ -460,7 +395,7 @@ nav ul li a:hover {
     margin-bottom: 3rem;
 }
 
-.grid-3 {
+.grid-3, .grid-6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -615,8 +550,6 @@ footer {
     vertical-align: middle;
 }
 
-
-
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -660,11 +593,11 @@ footer {
 
 @keyframes pulse {
     0% {
-        transform: scale(1);
+        transform: translate(-50%, -50%) scale(1);
         opacity: 0.3;
     }
     100% {
-        transform: scale(1.05);
+        transform: translate(-50%, -50%) scale(1.05);
         opacity: 0.1;
     }
 }
@@ -675,10 +608,13 @@ footer {
         padding: 0 1.5rem;
     }
     
-    #hero {
+    .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+    }
+    
+    #hero {
         padding: 6rem 0 3rem;
     }
     
@@ -688,8 +624,8 @@ footer {
     }
     
     .profile-image {
-        width: 250px;
-        height: 250px;
+        width: 230px;
+        height: 230px;
     }
     
     .profile-image-container::before {
@@ -726,7 +662,7 @@ footer {
         display: flex;
     }
     
-    .grid-3 {
+    .grid-3, .grid-6 {
         grid-template-columns: 1fr;
     }
     
