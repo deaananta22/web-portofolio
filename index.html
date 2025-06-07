@@ -333,6 +333,7 @@ nav ul li a:hover {
 }
 
 /* Decorative Background Circles - PERFECTLY ALIGNED */
+/* Decorative Background Circles - FIXED ALIGNMENT */
 .profile-image-container::before,
 .profile-image-container::after {
     content: '';
@@ -344,8 +345,8 @@ nav ul li a:hover {
 }
 
 .profile-image-container::before {
-    width: 320px;
-    height: 320px;
+    width: 266px;  /* 250px + 16px (padding dan border dari profile-image) */
+    height: 266px;
     background: var(--accent-gradient);
     opacity: 0.3;
     z-index: 1;
@@ -353,14 +354,13 @@ nav ul li a:hover {
 }
 
 .profile-image-container::after {
-    width: 350px;
-    height: 350px;
+    width: 280px;  /* Sedikit lebih besar dari ::before */
+    height: 280px;
     background: var(--purple-gradient);
     opacity: 0.2;
     z-index: 0;
     animation: pulse 6s ease-in-out infinite alternate-reverse;
 }
-
 /* Floating Decorative Elements - BETTER POSITIONED */
 .hero-right::before {
     content: '✨';
