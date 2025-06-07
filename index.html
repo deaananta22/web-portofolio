@@ -174,7 +174,6 @@ nav ul li a:hover {
     transition: var(--transition-fast);
 }
 
-/* Hero Section */
 /* Hero Section Layout */
 .hero {
     display: flex;
@@ -249,14 +248,6 @@ nav ul li a:hover {
 }
 
 .profile-image-container::before {
-    transform: translate(-70%, -40%);
-}
-
-.profile-image-container::after {
-    transform: translate(-65%, -35%);
-}
-
-.profile-image-container::before {
     width: 266px;
     height: 266px;
     background: var(--accent-gradient);
@@ -283,6 +274,7 @@ nav ul li a:hover {
     font-size: 2rem;
     animation: floatSlow 8s ease-in-out infinite;
     z-index: 4;
+  transform: translate(-70%, -40%);
 }
 
 .hero-right::after {
@@ -294,6 +286,7 @@ nav ul li a:hover {
     animation: floatSlow 10s ease-in-out infinite reverse;
     z-index: 4;
 }
+      
       
 /* Animasi tambahan */
 @keyframes pulse {
